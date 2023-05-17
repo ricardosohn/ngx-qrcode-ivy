@@ -1,6 +1,6 @@
 {
-  "name": "@techiediaries/ngx-qrcode",
-  "version": "9.0.1",
+  "name": "@jonyadamit/ngx-qrcode-ivy",
+  "version": "16.0.0",
   "description": "An Angular component for generating QRCodes",
   "homepage": "https://github.com/techiediaries/ngx-qrcode",
   "private": false,
@@ -9,8 +9,8 @@
     "url": "https://github.com/techiediaries/ngx-qrcode"
   },
   "author": {
-    "name": "Ahmed Bouchefra",
-    "email": "techiediaries9@gmail.com"
+    "name": "Jonathan Adamit",
+    "email": "contact@adamit.co.il"
   },
   "keywords": [
     "ng",
@@ -31,19 +31,33 @@
     "angular8",
     "angular 8",
     "angular9",
-    "angular 9"
+    "angular 9",
+    "angular10",
+    "angular 10",
+    "angular11",
+    "angular 11",
+    "angular12",
+    "angular 12",
+    "angular13",
+    "angular 13",
+    "angular14",
+    "angular 14",
+    "angular15",
+    "angular 15",
+    "angular16",
+    "angular 16"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/techiediaries/ngx-qrcode/issues"
+    "url": "https://github.com/jonyadamit/ngx-qrcode-ivy/issues"
   },
   "dependencies": {
     "qrcode": "^1.4.4",
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": ">=6.0.0 || <=10.0.0",
-    "@angular/core": ">=6.0.0 || <=10.0.0"
+    "@angular/common": ">=13.0.0 || <=16.0.1",
+    "@angular/core": ">=13.0.0 || <=16.0.1"
   },
   "engines": {
     "node": ">=10.0.0"

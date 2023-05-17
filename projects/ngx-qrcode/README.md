@@ -1,6 +1,6 @@
 # NgxQrcode
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.2.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
 ## Code scaffolding
 
