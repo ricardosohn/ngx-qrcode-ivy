@@ -164,6 +164,5 @@
     }},
   "cli": {
     "analytics": "3cbdf0e5-4793-407d-9c3d-8769136e76cf"
-  },
-  "defaultProject": "ngx-qrcode"
+  }
 }
