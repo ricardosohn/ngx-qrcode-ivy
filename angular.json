@@ -30,14 +30,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-qrcode/tsconfig.lib.json",
-              "projects/ngx-qrcode/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ngx-qrcode/src/**/*.ts",
+              "projects/ngx-qrcode/src/**/*.html"
             ]
           }
         }
@@ -88,7 +85,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -144,15 +140,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-qrcode-demo/tsconfig.app.json",
-              "projects/ngx-qrcode-demo/tsconfig.spec.json",
-              "projects/ngx-qrcode-demo/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ngx-qrcode-demo/src/**/*.ts",
+              "projects/ngx-qrcode-demo/src/**/*.html"
             ]
           }
         },
