@@ -1,17 +1,24 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, Renderer2, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  OnChanges,
+  Renderer2,
+  ViewChild
+} from '@angular/core';
 
-import QRCode from 'qrcode';
+import * as QRCode from 'qrcode';
 
 import { NgxQrcodeElementTypes } from './qrcode.types';
 import { DEFAULT_VALUES } from './qrcode.constants';
 
 @Component({
   selector: 'ngx-qrcode',
-  template: `<div #qrcElement [class]="cssClass"></div>`,
+  template: '<div #qrcElement [class]="cssClass"></div>',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QrcodeComponent implements OnChanges {
-
   @Input() elementType = DEFAULT_VALUES.elementType;
   @Input() cssClass = DEFAULT_VALUES.cssClass;
   @Input() alt: string;
@@ -26,8 +33,7 @@ export class QrcodeComponent implements OnChanges {
 
   @ViewChild('qrcElement') qrcElement: ElementRef;
 
-  constructor(private renderer: Renderer2) {
-  }
+  constructor(private renderer: Renderer2) {}
 
   ngOnChanges() {
     this.createQRCode();
@@ -41,44 +47,46 @@ export class QrcodeComponent implements OnChanges {
     let element: Element;
 
     switch (this.elementType) {
-
       case NgxQrcodeElementTypes.CANVAS:
-        element = this.renderer.createElement('canvas');
-        this.toCanvas(element).then(() => {
-          this.renderElement(element);
-        }).catch(e => {
-          this.removeElementChildren();
-          console.error(e);
-        });
+        element = this.renderer.createElement('canvas') as HTMLCanvasElement;
+        this.toCanvas(element)
+          .then(() => {
+            this.renderElement(element);
+          })
+          .catch((e) => {
+            this.removeElementChildren();
+            console.error(e);
+          });
         break;
       default:
-        element = this.renderer.createElement('img');
-        this.toDataURL().then((src: string) => {
-          element.setAttribute('src', src);
-          if (this.alt) {
-            element.setAttribute('alt', this.alt);
-          }
-          this.renderElement(element);
-        }).catch(e => {
-          this.removeElementChildren();
-          console.error(e);
-        });
+        element = this.renderer.createElement('img') as HTMLImageElement;
+        this.toDataURL()
+          .then((src: string) => {
+            element.setAttribute('src', src);
+            if (this.alt) {
+              element.setAttribute('alt', this.alt);
+            }
+            this.renderElement(element);
+          })
+          .catch((e) => {
+            this.removeElementChildren();
+            console.error(e);
+          });
     }
   }
 
   private toDataURL(): Promise<string> {
-    return QRCode.toDataURL(this.value,
-      {
-        version: this.version,
-        errorCorrectionLevel: this.errorCorrectionLevel,
-        margin: this.margin,
-        scale: this.scale,
-        width: this.width,
-        color: {
-          dark: this.colorDark,
-          light: this.colorLight
-        }
-      });
+    return QRCode.toDataURL(this.value, {
+      version: this.version,
+      errorCorrectionLevel: this.errorCorrectionLevel,
+      margin: this.margin,
+      scale: this.scale,
+      width: this.width,
+      color: {
+        dark: this.colorDark,
+        light: this.colorLight
+      }
+    });
   }
 
   private toCanvas(canvas): Promise<any> {
@@ -101,6 +109,7 @@ export class QrcodeComponent implements OnChanges {
   }
 
   private removeElementChildren(): void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     for (const node of this.qrcElement.nativeElement.childNodes) {
       this.renderer.removeChild(this.qrcElement.nativeElement, node);
     }

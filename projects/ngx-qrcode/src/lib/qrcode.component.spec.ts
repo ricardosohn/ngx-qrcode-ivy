@@ -1,7 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 
-import QRCode from 'qrcode';
+import * as QRCode from 'qrcode';
 
 import { QrcodeComponent } from './qrcode.component';
 import { DEFAULT_VALUES } from './qrcode.constants';
@@ -15,14 +15,19 @@ describe('QrcodeComponent', () => {
   let toCanvasSpy: jasmine.Spy;
   const IMAGE_SRC = 'imgSrc';
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(waitForAsync(() => {
+    void TestBed.configureTestingModule({
       declarations: [QrcodeComponent, TestHostComponent]
-    })
-      .compileComponents();
+    }).compileComponents();
 
-    toDataURLSpy = spyOn(QRCode, 'toDataURL').and.returnValue(Promise.resolve(IMAGE_SRC));
-    toCanvasSpy = spyOn(QRCode, 'toCanvas').and.returnValue(Promise.resolve(null));
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    toDataURLSpy = spyOn<any, string>(QRCode, 'toDataURL').and.returnValue(
+      Promise.resolve(IMAGE_SRC)
+    );
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    toCanvasSpy = spyOn<any, string>(QRCode, 'toCanvas').and.returnValue(
+      Promise.resolve(null)
+    );
   }));
 
   beforeEach(() => {
@@ -33,7 +38,7 @@ describe('QrcodeComponent', () => {
   });
 
   it('should create', () => {
-    expect(qrcodeComponent).toBeTruthy();
+    void expect(qrcodeComponent).toBeTruthy();
   });
 
   describe('when has no value', () => {
@@ -43,7 +48,10 @@ describe('QrcodeComponent', () => {
     });
 
     it('should not render nothing', () => {
-      expect(qrcodeComponent.qrcElement.nativeElement.childNodes.length).toBe(0);
+      void expect(
+        (qrcodeComponent.qrcElement.nativeElement as HTMLElement).childNodes
+          .length
+      ).toBe(0);
     });
   });
 
@@ -52,45 +60,54 @@ describe('QrcodeComponent', () => {
       component.elementType = NgxQrcodeElementTypes.URL;
     });
 
-    it('should render img element', done => {
+    it('should render img element', (done) => {
       fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        expect(qrcodeComponent.qrcElement.nativeElement.childNodes[0].tagName.toLowerCase()).toBe('img');
+      void fixture.whenStable().then(() => {
+        void expect(
+          (
+            (qrcodeComponent.qrcElement.nativeElement as HTMLElement)
+              .childNodes[0] as HTMLImageElement
+          ).tagName.toLowerCase()
+        ).toBe('img');
         done();
       });
     });
 
-    it('should not render img alt attribute by default', done => {
+    it('should not render img alt attribute by default', (done) => {
       const defaultAlt = '';
       fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        const imageElement = qrcodeComponent.qrcElement.nativeElement.childNodes[0];
-        expect(imageElement.alt).toBe(defaultAlt);
+      void fixture.whenStable().then(() => {
+        const imageElement = (
+          qrcodeComponent.qrcElement.nativeElement as HTMLElement
+        ).childNodes[0] as HTMLImageElement;
+        void expect(imageElement.alt).toBe(defaultAlt);
         done();
       });
     });
 
-    it('should render img alt attribute when defined', done => {
+    it('should render img alt attribute when defined', (done) => {
       const alt = 'hello alt';
       component.alt = alt;
       fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        const imageElement = qrcodeComponent.qrcElement.nativeElement.childNodes[0];
-        expect(imageElement.alt).toBe(alt);
+      void fixture.whenStable().then(() => {
+        const imageElement = (
+          qrcodeComponent.qrcElement.nativeElement as HTMLElement
+        ).childNodes[0] as HTMLImageElement;
+        void expect(imageElement.alt).toBe(alt);
         done();
       });
     });
 
-    it('should catch QRCode error and have no children', done => {
-      fixture.whenStable().then(() => {
+    it('should catch QRCode error and have no children', (done) => {
+      void fixture.whenStable().then(() => {
         toDataURLSpy.and.returnValue(Promise.reject('error in toDataURL'));
         component.cssClass = 'fire change detection';
         fixture.detectChanges();
         const renderSpy = spyOn<any>(qrcodeComponent, 'renderElement');
         const removeSpy = spyOn<any>(qrcodeComponent, 'removeElementChildren');
-        fixture.whenStable().then(() => {
-          expect(renderSpy).not.toHaveBeenCalled();
-          expect(removeSpy).toHaveBeenCalled();
+        void fixture.whenStable().then(() => {
+          void expect(renderSpy).not.toHaveBeenCalled();
+          void expect(removeSpy).toHaveBeenCalled();
           done();
         });
       });
@@ -102,23 +119,28 @@ describe('QrcodeComponent', () => {
       component.elementType = NgxQrcodeElementTypes.CANVAS;
     });
 
-    it('should render a canvas element', done => {
+    it('should render a canvas element', (done) => {
       fixture.detectChanges();
-      fixture.whenStable().then(() => {
-        expect(qrcodeComponent.qrcElement.nativeElement.childNodes[0].tagName.toLowerCase()).toBe('canvas');
+      void fixture.whenStable().then(() => {
+        void expect(
+          (
+            (qrcodeComponent.qrcElement.nativeElement as HTMLElement)
+              .childNodes[0] as HTMLImageElement
+          ).tagName.toLowerCase()
+        ).toBe('canvas');
         done();
       });
     });
 
-    it('should catch QRCode error and have no children', done => {
-      fixture.whenStable().then(() => {
+    it('should catch QRCode error and have no children', (done) => {
+      void fixture.whenStable().then(() => {
         toCanvasSpy.and.returnValue(Promise.reject('error in toCanvas'));
         fixture.detectChanges();
         const renderSpy = spyOn<any>(qrcodeComponent, 'renderElement');
         const removeSpy = spyOn<any>(qrcodeComponent, 'removeElementChildren');
-        fixture.whenStable().then(() => {
-          expect(renderSpy).not.toHaveBeenCalled();
-          expect(removeSpy).toHaveBeenCalled();
+        void fixture.whenStable().then(() => {
+          void expect(renderSpy).not.toHaveBeenCalled();
+          void expect(removeSpy).toHaveBeenCalled();
           done();
         });
       });
@@ -127,8 +149,13 @@ describe('QrcodeComponent', () => {
 });
 
 @Component({
-  template: `
-    <ngx-qrcode #qrcodeComponent [elementType]="elementType" [cssClass]="cssClass" [value]="value" [alt]="alt"></ngx-qrcode>`
+  template: ` <ngx-qrcode
+    #qrcodeComponent
+    [elementType]="elementType"
+    [cssClass]="cssClass"
+    [value]="value"
+    [alt]="alt"
+  ></ngx-qrcode>`
 })
 class TestHostComponent {
   @ViewChild('qrcodeComponent') qrcodeComponent: QrcodeComponent;

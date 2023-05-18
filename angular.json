@@ -59,13 +59,12 @@
             "main": "projects/ngx-qrcode-demo/src/main.ts",
             "polyfills": "projects/ngx-qrcode-demo/src/polyfills.ts",
             "tsConfig": "projects/ngx-qrcode-demo/tsconfig.app.json",
+            "allowedCommonJsDependencies": ["qrcode"],
             "assets": [
               "projects/ngx-qrcode-demo/src/favicon.ico",
               "projects/ngx-qrcode-demo/src/assets"
             ],
-            "styles": [
-              "projects/ngx-qrcode-demo/src/styles.scss"
-            ],
+            "styles": ["projects/ngx-qrcode-demo/src/styles.scss"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -133,9 +132,7 @@
               "projects/ngx-qrcode-demo/src/favicon.ico",
               "projects/ngx-qrcode-demo/src/assets"
             ],
-            "styles": [
-              "projects/ngx-qrcode-demo/src/styles.scss"
-            ],
+            "styles": ["projects/ngx-qrcode-demo/src/styles.scss"],
             "scripts": []
           }
         },

@@ -6,5 +6,4 @@ import { QrcodeComponent } from './qrcode.component';
   declarations: [QrcodeComponent],
   exports: [QrcodeComponent]
 })
-export class NgxQRCodeModule {
-}
+export class NgxQRCodeModule {}

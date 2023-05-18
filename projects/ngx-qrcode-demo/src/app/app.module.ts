@@ -6,15 +6,9 @@ import { NgxQRCodeModule } from '@jonyadamit/ngx-qrcode-ivy';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgxQRCodeModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, NgxQRCodeModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

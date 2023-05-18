@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {
   NgxQrcodeElementTypes,
-  NgxQrcodeErrorCorrectionLevels,
+  NgxQrcodeErrorCorrectionLevels
 } from '@jonyadamit/ngx-qrcode-ivy';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'ngx-qrcode-demo';

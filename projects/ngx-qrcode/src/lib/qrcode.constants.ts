@@ -1,10 +1,14 @@
-import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels, NgxQrcodeVersionType } from './qrcode.types';
+import {
+  NgxQrcodeElementTypes,
+  NgxQrcodeErrorCorrectionLevels,
+  NgxQrcodeVersionType
+} from './qrcode.types';
 
 export const DEFAULT_VALUES = {
   elementType: NgxQrcodeElementTypes.URL,
   cssClass: 'qrcode',
   value: 'https://www.techiediaries.com',
-  version: '' as NgxQrcodeVersionType,
+  version: undefined as NgxQrcodeVersionType,
   errorCorrectionLevel: NgxQrcodeErrorCorrectionLevels.MEDIUM,
   margin: 4,
   scale: 4,
