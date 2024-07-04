@@ -1,9 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { Component } from '@angular/core';
-import {
-  NgxQrcodeElementTypes,
-  NgxQrcodeErrorCorrectionLevels
-} from '@ricardosohn/ngx-qrcode-ivy';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +7,7 @@ import {
 })
 export class AppComponent {
   title = 'ngx-qrcode-demo';
-  elementType = NgxQrcodeElementTypes.URL;
-  correctionLevel = NgxQrcodeErrorCorrectionLevels.LOW;
+  elementType = 'url';
+  correctionLevel = 'l';
   value = 'ricardosohn';
 }
