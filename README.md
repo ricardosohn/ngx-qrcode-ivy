@@ -1,38 +1,27 @@
-# @techiediaries/ngx-qrcode
+# @ricardosohn/ngx-qrcode-ivy
 
-```diff
-! ⚠️ WARNING: The NPM package ngx-qrcode2 has been deprecated. Use @techiediaries/ngx-qrcode instead.
-```
+`@ricardosohn/ngx-qrcode-ivy` An Angular Component library for Generating QR (Quick Response ) Codes.
 
-`@techiediaries/ngx-qrcode` An Angular Component library for Generating QR (Quick Response ) Codes.
+You can use the `@ricardosohn/ngx-qrcode-ivy` to easily generate QR codes inside your Angular 16
 
-You can use the `@techiediaries/ngx-qrcode` to easily generate QR codes inside your Angular 6 or Ionic 3 applications 
+## How to install @ricardosohn/ngx-qrcode-ivy?
 
->QR code (abbreviated from Quick Response Code) is the trademark for a type of matrix barcode (or two-dimensional barcode) first designed for the automotive industry in Japan. A barcode is a machine-readable optical label that contains information about the item to which it is attached. A QR code uses four standardized encoding modes (numeric, alphanumeric, byte/binary, and kanji) to efficiently store data; extensions may also be used. [Source](https://en.wikipedia.org/wiki/QR_code)
-
-## How to install @techiediaries/ngx-qrcode?
-
-To use ngx-qrcode in your project, install it via npm or yarn:
+To use ngx-qrcode-ivy in your project, install it via npm or yarn:
 
 ```bash
-$ npm install @techiediaries/ngx-qrcode --save
+$ npm install @ricardosohn/ngx-qrcode-ivy --save
 or
-$ yarn add @techiediaries/ngx-qrcode
+$ yarn add @ricardosohn/ngx-qrcode-ivy
 ```
 
-## How to use @techiediaries/ngx-qrcode?
+## How to use @ricardosohn/ngx-qrcode-ivy?
 
-For a complete and detailed tutorial on how to use this library. See:
-
-[How to Generate QR Codes In Angular 4+ Applications ](https://www.techiediaries.com/generate-qrcodes-angular)
-
-
-Import `NgxQRCodeModule` from `@techiediaries/ngx-qrcode`  into your `app.module.ts`:
+Import `NgxQRCodeModule` from `@ricardosohn/ngx-qrcode-ivy`  into your `app.module.ts`:
 
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { NgxQRCodeModule } from '@ricardosohn/ngx-qrcode';
 
 import { AppComponent } from './app.component';
 
@@ -59,7 +48,7 @@ In `app.component.html`, add:
 
 <div style="text-align:center">
   <h1>
-    @techiediaries/ngx-qrcode demo 
+    @ricardosohn/ngx-qrcode-ivy demo 
   </h1>
 </div>
 
@@ -84,14 +73,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   elementType = 'url';
-  value = 'Techiediaries';
+  value = 'ricardosohn';
 }
 ```
 
 # Contributing
 Please see [Contributing Guidelines](.github/CONTRIBUTING.md).
 
-## How to develop @techiediaries/ngx-qrcode?
+## How to develop @ricardosohn/ngx-qrcode-ivy?
 
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
 
@@ -133,7 +122,7 @@ $ yarn lib:publish
 Please see [Code of Conduct](.github/CODE_OF_CONDUCT.md).
 
 ## License
-[MIT](/LICENSE) © [Techiediaries](mailto:techiediaries9@gmail.com)
+[MIT](/LICENSE)
 
 ## Troubleshoots
 

@@ -37,8 +37,7 @@ https://plnkr.co or similar.
 Angular version: X.Y.Z
 <!-- Check whether this is still an issue in the most recent Angular version -->
 
-Your version of `@techiediaries/ngx-qrcode`:
-<!-- Check whether this is still an issue in the most recent `@techiediaries/ngx-qrcode` version -->
+Your version of `@ricardosohn/ngx-qrcode-ivy`:
 
 Browser:
 - [ ] Chrome (desktop) version XX

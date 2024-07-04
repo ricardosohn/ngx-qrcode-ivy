@@ -7,7 +7,7 @@ import {
 export const DEFAULT_VALUES = {
   elementType: NgxQrcodeElementTypes.URL,
   cssClass: 'qrcode',
-  value: 'https://www.techiediaries.com',
+  value: 'https://www.ricardosohn.com',
   version: undefined as NgxQrcodeVersionType,
   errorCorrectionLevel: NgxQrcodeErrorCorrectionLevels.MEDIUM,
   margin: 4,

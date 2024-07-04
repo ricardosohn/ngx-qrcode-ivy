@@ -13,5 +13,5 @@ export class AppComponent {
   title = 'ngx-qrcode-demo';
   elementType = NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.LOW;
-  value = 'Techiediaries';
+  value = 'ricardosohn';
 }
