@@ -16,7 +16,7 @@
       "dom"
     ],
     "paths": {
-      "@jonyadamit/ngx-qrcode-ivy": [
+      "@ricardosohn/ngx-qrcode-ivy": [
         "dist/ngx-qrcode"
       ]
     },

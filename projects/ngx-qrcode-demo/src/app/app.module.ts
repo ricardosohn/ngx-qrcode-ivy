@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { NgxQRCodeModule } from '@jonyadamit/ngx-qrcode-ivy';
+import { NgxQRCodeModule } from '@ricardosohn/ngx-qrcode-ivy';
 
 import { AppComponent } from './app.component';
 

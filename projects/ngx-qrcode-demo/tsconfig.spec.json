@@ -7,7 +7,7 @@
       "node"
     ],
     "paths": {
-      "@techiediaries/ngx-qrcode": [
+      "@ricardosohn/ngx-qrcode": [
         "projects/ngx-qrcode/src/public-api.ts"
       ]
     }

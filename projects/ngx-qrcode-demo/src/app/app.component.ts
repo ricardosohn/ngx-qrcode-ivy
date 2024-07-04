@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {
   NgxQrcodeElementTypes,
   NgxQrcodeErrorCorrectionLevels
-} from '@jonyadamit/ngx-qrcode-ivy';
+} from '@ricardosohn/ngx-qrcode-ivy';
 
 @Component({
   selector: 'app-root',

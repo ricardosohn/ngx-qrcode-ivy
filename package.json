@@ -1,6 +1,6 @@
 {
-  "name": "@jonyadamit/ngx-qrcode-ivy",
-  "version": "16.0.0",
+  "name": "@ricardosohn/ngx-qrcode-ivy",
+  "version": "16.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve ngx-qrcode-demo",
@@ -16,16 +16,16 @@
     "lib:package": "yarn build && yarn copy:readme",
     "prelib:publish": "yarn lib:package",
     "lib:publish": "cd ./dist/ngx-qrcode && yarn publish --access=public",
-    "tags": "yarn tag list @jonyadamit/ngx-qrcode-ivy"
+    "tags": "yarn tag list @ricardosohn/ngx-qrcode-ivy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jonyadamit/ngx-qrcode-ivy.git"
+    "url": "git+https://github.com/ricardosohn/ngx-qrcode-ivy.git"
   },
   "author": "Jonathan Adamit <contact@adamit.co.il>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jonyadamit/ngx-qrcode-ivy/issues"
+    "url": "https://github.com/ricardosohn/ngx-qrcode-ivy/issues"
   },
   "private": true,
   "dependencies": {
