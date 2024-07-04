@@ -22,7 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/ricardosohn/ngx-qrcode-ivy.git"
   },
-  "author": "Jonathan Adamit <contact@adamit.co.il>",
+  "author": "Ricardo Sohn",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ricardosohn/ngx-qrcode-ivy/issues"
